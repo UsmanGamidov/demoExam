@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Админ-панель</h2>
+
+{% for req in requests %}
+  <div class="admin">
+    <p>ФИО:</p> {{ req.user.full_name }} <br>
+    <p>Телефон:</p> {{ req.user.phone }} <br>
+    <p>Авто:</p> {{ req.car }} <br>
+    <p>Дата/время:</p> {{ req.date }} {{ req.time }} <br>
+    <p>Описание:</p> {{ req.problem }} <br>
+    <p>Статус:</p> {{ req.get_status_display }} <br>
+
+    {% if req.status == 'new' %}
+      <form method="post">
+        {% csrf_token %}
+        <input type="hidden" name="req_id" value="{{ req.id }}">
+        <select name="new_status">
+          <option value="confirmed">Подтвердить</option>
+          <option value="rejected">Отклонить</option>
+        </select>
+        <button type="submit">Изменить статус</button>
+      </form>
+    {% else %}
+      <i>Статус изменить нельзя</i>
+    {% endif %}
+  </div>
+{% endfor %}
+{% endblock %}

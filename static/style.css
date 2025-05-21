@@ -1,0 +1,95 @@
+/* Общий контейнер */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Шапка */
+nav {
+  width: 50%;
+  color: white;
+  background-color: #aeaeaebb;
+  padding: 22px 26px;
+  margin: 10px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+nav a {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  font-weight: bold;
+  padding: 6px 12px;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+}
+
+nav a:hover {
+  background-color: #038ef2b9;
+}
+
+/* Контент */
+.container {
+  max-width: 500px;
+  width: 90%;
+  margin-top: 40px;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Формы */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+form p {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+input, select, textarea, button {
+  padding: 10px 12px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: #0077cc;
+}
+
+button {
+  background-color: #0077cc;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+button:hover {
+  background-color: #005fa3;
+}
+
+.admin {
+    border: solid 1px black;
+    padding: 15px;
+    margin: 10px;
+    display: inline-block;
+}
+
+.admin p {
+    display: inline-block;
+    gap: 1px;
+}
